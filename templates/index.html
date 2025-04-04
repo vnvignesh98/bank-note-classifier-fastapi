@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Salary Prediction</title>
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Public Sans' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Poppins";
+        }
+
+        .mainbody {
+            width: 400px;
+            height: 500px;
+            position: absolute;
+            top: 15%;
+            left: 35%;
+        }
+
+        h2 {
+            text-align: center;
+            position: absolute;
+            left: 25%;
+        }
+
+        form {
+            position: relative;
+            height: 400px;
+            align-items: center;
+            text-align: center;
+        }
+
+        input.variance_input {
+            border: 0;
+            outline: 0;
+            color: rgb(60, 66, 87);
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            width: 250px;
+            position: absolute;
+            top: 0%;
+            left: 22.5%;
+            padding: 4px 8px;
+            min-height: 28px;
+            vertical-align: middle;
+            transition: background-color .24s, box-shadow .24s;
+            transition-property: background-color, box-shadow;
+            transition-duration: 0.24s, 0.24s;
+            transition-timing-function: ease, ease;
+            transition-delay: 0s, 0s;
+        }
+
+        input.skewness_input {
+            border: 0;
+            outline: 0;
+            color: rgb(60, 66, 87);
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            width: 250px;
+            position: absolute;
+            top: 17.5%;
+            left: 22.5%;
+            padding: 4px 8px;
+            min-height: 28px;
+            vertical-align: middle;
+            transition: background-color .24s, box-shadow .24s;
+            transition-property: background-color, box-shadow;
+            transition-duration: 0.24s, 0.24s;
+            transition-timing-function: ease, ease;
+            transition-delay: 0s, 0s;
+        }
+
+        input.curtosis_input {
+            border: 0;
+            outline: 0;
+            color: rgb(60, 66, 87);
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            width: 250px;
+            position: absolute;
+            top: 35%;
+            left: 22.5%;
+            padding: 4px 8px;
+            min-height: 28px;
+            vertical-align: middle;
+            transition: background-color .24s, box-shadow .24s;
+            transition-property: background-color, box-shadow;
+            transition-duration: 0.24s, 0.24s;
+            transition-timing-function: ease, ease;
+            transition-delay: 0s, 0s;
+        }
+
+        input.entropy_input {
+            border: 0;
+            outline: 0;
+            color: rgb(60, 66, 87);
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            width: 250px;
+            position: absolute;
+            top: 52.5%;
+            left: 22.5%;
+            padding: 4px 8px;
+            min-height: 28px;
+            vertical-align: middle;
+            transition: background-color .24s, box-shadow .24s;
+            transition-property: background-color, box-shadow;
+            transition-duration: 0.24s, 0.24s;
+            transition-timing-function: ease, ease;
+            transition-delay: 0s, 0s;
+        }
+
+        button {
+            position: absolute;
+            top: 70%;
+            left: 42.5%;
+            width: 100px;
+            border: 0;
+            outline: 0;
+            color: rgb(60, 66, 87);
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(60 66 87 / 16%) 0px 0px 0px 1px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 400;
+            padding: 4px 8px;
+            min-height: 28px;
+            vertical-align: middle;
+        }
+
+        button:hover {
+            background-color: rgb(187, 210, 228);
+        }
+
+        h2.blink {
+            font-size: medium; 
+            position: absolute; 
+            top: 82.5%; 
+            left: 40%;
+            animation: blinker 1.5s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainbody">
+        <div style="height: 80px;">
+            <h2>
+                Bank Note Prediction
+            </h2>
+        </div>
+        <div>
+            <form method="POST">
+                <input class="variance_input" type="number" step="0.1" name="variance" placeholder="Variance" required="required" />
+                <input class="skewness_input" type="number" step="0.1" name="skewness" placeholder="Skewness"
+                    required="required" />
+                <input class="curtosis_input" type="number" step="0.1" name="curtosis" placeholder="Curtosis" required="required" />
+                <input class="entropy_input" type="number" step="0.1" name="entropy" placeholder="Entropy" required="required" />
+                <button type="submit">Submit</button>
+            </form>
+            <br>
+            <br>
+            <h2 class="blink">{{prediction_text}}</h2>
+        </div>
+    </div>
+</body>
+
+</html>
