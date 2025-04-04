@@ -11,3 +11,4 @@ MarkupSafe
 fastapi
 uvloop
 httptools
+pydantic
