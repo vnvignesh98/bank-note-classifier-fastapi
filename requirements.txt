@@ -13,3 +13,4 @@ uvloop
 httptools
 pydantic
 uvicorn
+python-multipart
